@@ -9,9 +9,7 @@ public class Account
 
     public Account()
     {
-        //{
-        //    Lines = File.ReadAllLines(@"D:\ДЗ С#\hschool\hschool_beggining_csh\Game\User\DataBase\DT.txt");
-        //}
+       
     }
     public bool Login()
     {
@@ -77,7 +75,6 @@ public class Account
             }
         }
         return true;
-
     }
 
 
