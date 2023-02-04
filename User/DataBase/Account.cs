@@ -1,80 +1,82 @@
 ﻿using System;
+using System.IO;
 namespace DataBase;
 
 public class Account
 {
-    private int NextIdUser = 1;
-    private User[] Users;
+    string[] Lines;
     public Account()
     {
         {
-            string path = @"D:\ДЗ С#\hschool\hschool_beggining_csh\Game\User";
-            FileStream basa = new FileStream(path, FileMode.OpenOrCreate);
-            StreamReader stream = new StreamReader(basa);
-
-
+            Lines = File.ReadAllLines(@"D:\ДЗ С#\hschool\hschool_beggining_csh\Game\User\DataBase\DT.txt");
         }
     }
-    public bool Login(out User? user)
+    public bool Login()
     {
         System.Console.Write("введите логин: ");
-        string? email = Console.ReadLine();
+        string? login = Console.ReadLine();
         System.Console.Write("введите пароль:");
         string? pass = Console.ReadLine();
-        user = Search(login, pass);
+        string user = Search(login, pass);
         return user != null;
     }
 
-    private User? Search(string? login, string? pass)
+    private string Search(string? login, string? pass)
     {
         if (string.IsNullOrEmpty(login) || string.IsNullOrEmpty(pass))
         {
             System.Console.WriteLine("ERROR");
             return null;
         }
-
-        foreach (User user in Users)
+        for (int i = 0; i < Lines.Length; i++)
         {
-            if (user == null)
+            string[] strings = Lines[i].Split(',');
+            if (strings[0] == login && strings[1] == pass)
             {
-                continue;
-            }
-            if (user.Email == login && user.Password == pass)
-            {
-                System.Console.WriteLine("Login Succesful");
-                return user;
+                Console.WriteLine("Login Succesful");
+                string user = login + ',' + pass;
 
+                return user;
             }
         }
         System.Console.WriteLine("ERROR input");
         return null;
 
     }
-    public bool Registr(out User? user)
+    public bool Registr()
     {
-        System.Console.WriteLine("введите имя");
+        System.Console.WriteLine("введите логин");
         string? name = Console.ReadLine();
         System.Console.WriteLine("введите пароль");
         string? pass = Console.ReadLine();
-        System.Console.WriteLine("введите почту");
-        string? email = Console.ReadLine();
-        user = SearchSimple(name, pass, email);
-        if (user != null)
+
+        if (SearchSimple(name, pass))
+
         {
-            Users[user.Id - 1] = user;
+            using StreamWriter sw = new StreamWriter(@"D:\ДЗ С#\hschool\hschool_beggining_csh\Game\User\DataBase\DT.txt");
+            sw.WriteLine($"{name},{pass}");
+            Console.WriteLine("Регистрация завершена");
         }
-        return user != null;
+        return Login();
 
     }
-    private User? SearchSimple(string? name, string? password, string? email)
+    private bool SearchSimple(string? name, string? password)
     {
-        if (string.IsNullOrEmpty(email)
- || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(name))
+        if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(password))
         {
-            System.Console.WriteLine("error input");
-            return null;
+            System.Console.WriteLine("ERROR");
+            return Registr();
         }
-        return new User(NextIdUser++, name, password, email);
+        for (int i = 0; i < Lines.Length; i++)
+        {
+            string[] strings = Lines[i].Split(',');
+            if (strings[0] == name)
+            {
+                Console.WriteLine("такой пользователь уже существует");
+                return Registr();
+            }
+        }
+        return true;
 
     }
 
