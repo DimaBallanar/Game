@@ -10,28 +10,24 @@ public class Account
         {
             string path = @"D:\ДЗ С#\hschool\hschool_beggining_csh\Game\User";
             FileStream basa = new FileStream(path, FileMode.OpenOrCreate);
-            Users = new User[20];
+            StreamReader stream = new StreamReader(basa);
 
-            Users[0] = new User(NextIdUser++, "Вася", "test2", "1111@gmail.com");
-            Users[1] = new User(NextIdUser++, "test2", "test2", "2111@gmail.com");
-            Users[2] = new User(NextIdUser++, "test3", "test2", "3111@gmail.com");
-            Users[3] = new User(NextIdUser++, "test4", "test2", "4111@gmail.com");
 
         }
     }
     public bool Login(out User? user)
     {
-        System.Console.Write("введите email:");
+        System.Console.Write("введите логин: ");
         string? email = Console.ReadLine();
         System.Console.Write("введите пароль:");
         string? pass = Console.ReadLine();
-        user = Search(email, pass);
+        user = Search(login, pass);
         return user != null;
     }
 
-    private User? Search(string? email, string? pass)
+    private User? Search(string? login, string? pass)
     {
-        if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(pass))
+        if (string.IsNullOrEmpty(login) || string.IsNullOrEmpty(pass))
         {
             System.Console.WriteLine("ERROR");
             return null;
@@ -43,7 +39,7 @@ public class Account
             {
                 continue;
             }
-            if (user.Email == email && user.Password == pass)
+            if (user.Email == login && user.Password == pass)
             {
                 System.Console.WriteLine("Login Succesful");
                 return user;

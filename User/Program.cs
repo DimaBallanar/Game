@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataBase;
+using System;
 
 namespace MyApp // Note: actual namespace depends on the project name.
 {
@@ -15,14 +16,13 @@ namespace MyApp // Note: actual namespace depends on the project name.
                 Account regisrt = new Account();
                 regisrt.Registr(out User? user);
 
-                ApplicationTransaction applicationTransaction = new ApplicationTransaction();
-                applicationTransaction.SignIn();
+               
 
             }
             else if (choose == 2)
             {
-                ApplicationTransaction applicationTransaction = new ApplicationTransaction();
-                applicationTransaction.SignIn();
+               
+               
             }
             else
             {
