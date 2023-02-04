@@ -6,14 +6,11 @@ namespace DataBase;
 
 public class Account
 {
-
     public Account()
-    {
-       
+    {       
     }
     public bool Login()
     {
-
         System.Console.Write("введите логин: ");
         string? login = Console.ReadLine();
         System.Console.Write("введите пароль:");
@@ -40,7 +37,6 @@ public class Account
         }
         System.Console.WriteLine("ERROR input");
         return false;
-
     }
     public bool Registr()
     {
@@ -55,7 +51,6 @@ public class Account
             Console.WriteLine("Регистрация завершена");
         }
         return Login();
-
     }
     private bool SearchSimple(string? name, string? password)
     {
@@ -76,6 +71,4 @@ public class Account
         }
         return true;
     }
-
-
 }
