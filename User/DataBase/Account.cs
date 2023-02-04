@@ -6,7 +6,7 @@ namespace DataBase;
 
 public class Account
 {
-    string[] Lines=File.ReadAllLines(@"D:\ДЗ С#\hschool\hschool_beggining_csh\Game\User\DataBase\DT.txt");
+
     public Account()
     {
         //{
@@ -15,20 +15,21 @@ public class Account
     }
     public bool Login()
     {
+
         System.Console.Write("введите логин: ");
         string? login = Console.ReadLine();
         System.Console.Write("введите пароль:");
         string? pass = Console.ReadLine();
-        string user = Search(login, pass);
-        return user != null;
+        return Search(login, pass);
     }
 
-    private string Search(string? login, string? pass)
+    private bool Search(string? login, string? pass)
     {
+        string[] Lines = File.ReadAllLines(@"D:\ДЗ С#\hschool\hschool_beggining_csh\Game\User\DataBase\DT.txt");
         if (string.IsNullOrEmpty(login) || string.IsNullOrEmpty(pass))
         {
             Console.WriteLine("ERROR");
-            return null;
+            return false;
         }
         for (int i = 0; i < Lines.Length; i++)
         {
@@ -36,13 +37,11 @@ public class Account
             if (strings[0] == login && strings[1] == pass)
             {
                 Console.WriteLine("Login Succesful");
-                string user = login + ',' + pass;
-
-                return user;
+                return true;
             }
         }
         System.Console.WriteLine("ERROR input");
-        return null;
+        return false;
 
     }
     public bool Registr()
@@ -53,12 +52,8 @@ public class Account
         string? pass = Console.ReadLine();
 
         if (SearchSimple(name, pass))
-
         {
-            //using StreamWriter sw = new StreamWriter(@"D:\ДЗ С#\hschool\hschool_beggining_csh\Game\User\DataBase\DT.txt");
-            //StringBuilder sb = new StringBuilder();
-            File.AppendAllText(@"D:\ДЗ С#\hschool\hschool_beggining_csh\Game\User\DataBase\DT.txt", $"{name},{pass}");
-            //Lines.AppendAllLines($"{name},{pass}");
+            File.AppendAllText(@"D:\ДЗ С#\hschool\hschool_beggining_csh\Game\User\DataBase\DT.txt", $"\n{name},{pass}");
             Console.WriteLine("Регистрация завершена");
         }
         return Login();
@@ -66,6 +61,7 @@ public class Account
     }
     private bool SearchSimple(string? name, string? password)
     {
+        string[] Lines = File.ReadAllLines(@"D:\ДЗ С#\hschool\hschool_beggining_csh\Game\User\DataBase\DT.txt");
         if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(password))
         {
             System.Console.WriteLine("ERROR");

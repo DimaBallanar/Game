@@ -11,18 +11,19 @@ namespace MyApp // Note: actual namespace depends on the project name.
             System.Console.WriteLine("2-авторизация");
             System.Console.WriteLine("3-выход");
             int choose = Convert.ToInt32(Console.ReadLine());
+            Account account = new Account();
             if (choose == 1)
             {
-                Account regisrt = new Account();
-                regisrt.Registr();
+
+                account.Registr();
 
 
 
             }
             else if (choose == 2)
             {
-                Account login = new Account();
-                login.Login();
+
+                account.Login();
 
             }
             else
