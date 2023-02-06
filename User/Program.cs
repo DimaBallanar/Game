@@ -14,17 +14,11 @@ namespace MyApp // Note: actual namespace depends on the project name.
             Account account = new Account();
             if (choose == 1)
             {
-
                 account.Registr();
-
-
-
             }
             else if (choose == 2)
             {
-
                 account.Login();
-
             }
             else
             {
