@@ -6,7 +6,7 @@ public class User
     public string Password { get; set; }
      
 
-    public User(/*int id,*/ string name, string password, string email) //: this(id)
+    public User(/*int id,*/ string name, string password/*, string email*/) //: this(id)
     {
     
         Name = name;
