@@ -21,6 +21,22 @@ namespace BlackJack
 
             Start();
         }
+        public bool IsEnded { get; private set; }
 
+        public void Start()
+        {
+            bool replay = true;
+            while (replay)
+            {
+                Console.Clear();
+                Turn();
+                IsEnded = players.Any(x => x.IsLost);
+
+                Console.ReadLine();
+
+                if (IsEnded)
+                    replay = Replay();
+            }
+        }
     }
 }
