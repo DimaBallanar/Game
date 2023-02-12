@@ -39,4 +39,47 @@ namespace BlackJack
             }
         }
     }
+    private void Turn()
+    {
+        foreach (var player in players)
+        {
+            var status = player.Take() ? "Еще в игре" : "Проиграл";
+            Console.WriteLine($"У {player.Name} {player.Score}, он {status}");
+        }
+    }
+
+    private bool Replay()
+    {
+        bool result = false;
+
+        while (true)
+        {
+            Console.Clear();
+            Console.Write("Повторить? (y/n): ");
+            var value = Console.ReadLine();
+
+            if (value is "y" or "n")
+            {
+                result = value is "y";
+                break;
+            }
+        }
+
+        if (result)
+        {
+            Reset();
+        }
+
+        return result;
+    }
+
+    private void Reset()
+    {
+        deck = new();
+        foreach (var player in players)
+        {
+            player.Reset();
+        }
+    }
 }
+
