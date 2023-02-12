@@ -67,35 +67,7 @@ namespace Core.Repositories
             int lastID = userList.LastOrDefault()?.Id ?? 0;
             return ++lastID;
         }
-        //private List<User> GetAll()
-        //{
-        //    List<User> users = new List<User>();
-        //    var serializeoptions = new JsonSerializerOptions
-        //    {
-        //        PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-        //    };
-        //    try
-        //    {
-        //        using StreamReader sr1 = new StreamReader($"{path}users.txt");
-        //        string line = sr1.ReadLine();
-        //        while (line != null)
-        //        {
-        //            User user = JsonSerializer.Deserialize<User>(line, serializeoptions);
-        //            users.Add(user);
-        //            line = sr1.ReadLine();
-        //        }
-        //        sr1.Close();
-        //        return users;
-        //    }
-        //    catch (FileNotFoundException)
-        //    {
-        //        return users;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //}
+      
         private void UpdateFile(List<User?> userList)
         {
             try
