@@ -55,24 +55,21 @@ namespace Core.Controller
             {
                 return (false, null);
             }
-            Console.WriteLine("Hello! Hello! Do you want to edit your account? Y/N");
-            string? menu = Console.ReadLine();
-            if (!string.IsNullOrEmpty(menu) && menu.ToUpper().Equals("Y"))
+
+            Console.WriteLine("Great!");
+            Console.Write("Enter new Password: ");
+            string? password = Console.ReadLine();
+            if (!string.IsNullOrEmpty(password))
             {
-                Console.WriteLine("Great!");
-                Console.Write("Enter new Password: ");
-                string? password = Console.ReadLine();
-                if (!string.IsNullOrEmpty(password))
+                User cloneUser = user.Clone() as User;
+                cloneUser = servicUser.Update(cloneUser, password);
+                if (cloneUser != null)
                 {
-                    User cloneUser = user.Clone() as User;
-                    cloneUser = servicUser.Update(cloneUser, password);
-                    if (cloneUser != null)
-                    {
-                        Console.WriteLine("Succes");
-                        return (true, cloneUser);
-                    }
+                    Console.WriteLine("Succes");
+                    return (true, cloneUser);
                 }
             }
+
             return (true, null);
         }
         public (bool, User?) Delete(User? user)
