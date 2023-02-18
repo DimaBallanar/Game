@@ -34,47 +34,48 @@ namespace Core.Menu
 
                             PlatformController ControllerUser = new PlatformController();
                             (bool, User?) result = ControllerUser.Create();
+                            //autorizationIn = result.Item1;
+                            //user = result.Item2;
+                            break;
+                        }
+                    }
+
+                    else if (numberMenu.Equals("2"))
+                    {
+                        Console.Clear();
+                        while (true)
+                        {
+                            Console.Clear();
+                            PlatformController ControllerUser = new PlatformController();
+                            (bool, User?) result = ControllerUser.Login();
                             autorizationIn = result.Item1;
                             user = result.Item2;
                             break;
                         }
                     }
-                }
-                else if (numberMenu.Equals("2"))
-                {
-                    Console.Clear();
-                    while (true)
+                    else if (numberMenu.Equals("3"))
                     {
                         Console.Clear();
-                        PlatformController ControllerUser = new PlatformController();
-                        (bool, User?) result = ControllerUser.Login();
-                        autorizationIn = result.Item1;
-                        user = result.Item2;
-                        break;
-                    }
-                }
-                else if (numberMenu.Equals("3"))
-                {
-                    Console.Clear();
-                    while (true)
-                    {
-                        Console.Clear();
-                        Console.WriteLine("Статистика по играм");
-                        Console.WriteLine("1 крестики нолики");
-                        Console.WriteLine("2 БлекДжек");
-                        Console.WriteLine("0 Выход");
-                        numberMenu = Console.ReadLine();
-                        if (numberMenu.Equals("1"))
+                        while (true)
                         {
-                            // статистика игре
-                        }
-                        if (numberMenu.Equals("2"))
-                        {
-                            // статистика игре
-                        }
-                        else if (numberMenu.Equals("0"))
-                        {
-                            break;
+                            Console.Clear();
+                            Console.WriteLine("Статистика по играм");
+                            Console.WriteLine("1 крестики нолики");
+                            Console.WriteLine("2 БлекДжек");
+                            Console.WriteLine("0 Выход");
+                            numberMenu = Console.ReadLine();
+                            if (numberMenu.Equals("1"))
+                            {
+                                // статистика игре
+                            }
+                            if (numberMenu.Equals("2"))
+                            {
+                                // статистика игре
+                            }
+                            else if (numberMenu.Equals("0"))
+                            {
+                                break;
+                            }
                         }
                     }
                 }

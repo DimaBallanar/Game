@@ -28,8 +28,10 @@ namespace Core.Services
                 if (!_UserRepsitory.Exist(name))
                 {
                     User newUser = new User(name, password);
+                    Console.WriteLine("Регистрация прошла успешно");
+                    Console.ReadKey();
                     return _UserRepsitory.Create(newUser);
-
+                    
                 }
                 Console.WriteLine("Error");
                 return null;
