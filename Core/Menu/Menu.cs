@@ -33,9 +33,7 @@ namespace Core.Menu
                         {
 
                             PlatformController ControllerUser = new PlatformController();
-                            (bool, User?) result = ControllerUser.Create();
-                            //autorizationIn = result.Item1;
-                            //user = result.Item2;
+                            (bool, User?) result = ControllerUser.Create();                            
                             break;
                         }
                     }
@@ -77,7 +75,7 @@ namespace Core.Menu
                                 break;
                             }
                         }
-                    }
+                    }                    
                 }
 
                 else if (autorizationIn)
@@ -106,8 +104,7 @@ namespace Core.Menu
                             {
                                 PlatformController ControllerUser = new PlatformController();
                                 (bool, User?) result = ControllerUser.Update(user);
-                                autorizationIn = result.Item1;
-                                user = result.Item2;
+                                
                             }
                             else if (numberMenu.Equals("2"))
                             {
