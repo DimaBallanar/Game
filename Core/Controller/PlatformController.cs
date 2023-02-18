@@ -13,7 +13,6 @@ namespace Core.Controller
         private UserService servicUser = new UserService();
         public (bool, User?) Login()
         {
-
             Console.Write("Enter Name: ");
             string? name = Console.ReadLine();
             Console.Write("Enter Password: ");
@@ -28,9 +27,7 @@ namespace Core.Controller
                     return (true, userID);
                 }
             }
-
             return (false, null);
-
         }
         public (bool, User?) Create()
         {
@@ -47,7 +44,6 @@ namespace Core.Controller
                     return (true, userID);
                 }
             }
-
             return (false, null);
         }
         public (bool, User?) Update(User? user)
@@ -55,9 +51,7 @@ namespace Core.Controller
             if (user == null)
             {
                 return (false, null);
-            }
-
-            Console.WriteLine("Great!");
+            }          
             Console.Write("Enter new Password: ");
             string? password = Console.ReadLine();
             if (!string.IsNullOrEmpty(password))
@@ -66,11 +60,10 @@ namespace Core.Controller
                 cloneUser = servicUser.Update(cloneUser, password);
                 if (cloneUser != null)
                 {
-                    Console.WriteLine("Succes");
+                    Console.WriteLine("Пароль успешно изменен");
                     return (true, cloneUser);
                 }
             }
-
             return (true, null);
         }
         public (bool, User?) Delete(User? user)
@@ -92,7 +85,6 @@ namespace Core.Controller
             }
             return (false, null);
         }
-
     }
 }
 
