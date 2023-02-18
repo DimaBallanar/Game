@@ -53,7 +53,7 @@ namespace Core.Repositories
                 {
                     if (userList[i] != null)
                     {
-                        string json = JsonSerializer.Serialize<User>(userList[i], serializeoptions);
+                        string json = JsonSerializer.Serialize<T>(userList[i], serializeoptions);
                         sw1.WriteLine(json);
                     }
                 }
