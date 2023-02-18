@@ -19,6 +19,8 @@ namespace Core.Services
             {
                 return user;
             }
+            Console.WriteLine("Ошибка ввода, попробуйте еще раз");
+            Console.ReadKey();
             return null;
         }
         public User? Create(string name, string password)
@@ -34,6 +36,7 @@ namespace Core.Services
                     
                 }
                 Console.WriteLine("Error");
+                Console.ReadKey();
                 return null;
             }
             catch (Exception ex)
@@ -63,6 +66,8 @@ namespace Core.Services
             try
             {
                 _UserRepsitory.Delete(user.Id);
+                Console.WriteLine("Пользователь успешно удален");
+                Console.ReadKey();
                 return true;
             }
             catch (Exception ex)
