@@ -24,6 +24,7 @@ namespace Core.Controller
                 if (userID != null)
                 {
                     Console.WriteLine("Succes");
+                    Console.ReadKey();
                     return (true, userID);
                 }
             }
