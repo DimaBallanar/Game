@@ -13,11 +13,11 @@ namespace Core.Controller
         private UserService servicUser = new UserService();
         public (bool, User?) Login()
         {
-            Console.WriteLine("Hello! Do you want to login ? Y/N");
-            string? menu = Console.ReadLine();
-            if (!string.IsNullOrEmpty(menu) && menu.ToUpper().Equals("Y"))
-            {
-                Console.WriteLine("Great!");
+            //Console.WriteLine("Hello! Do you want to login ? Y/N");
+            //string? menu = Console.ReadLine();
+            //if (!string.IsNullOrEmpty(menu) && menu.ToUpper().Equals("Y"))
+            //{
+            //    Console.WriteLine("Great!");
                 Console.Write("Enter Name: ");
                 string? name = Console.ReadLine();
                 Console.Write("Enter Password: ");
@@ -31,17 +31,13 @@ namespace Core.Controller
                         return (true, userID);
                     }
                 }
-            }
+            //}
             return (false, null);
 
         }
         public (bool, User?) Create()
-        {
-            Console.WriteLine("Hello! Hello! Do you want to create a user? Y/N");
-            string? menu = Console.ReadLine();
-            if (!string.IsNullOrEmpty(menu) && menu.ToUpper().Equals("Y"))
-            {
-                Console.WriteLine("Great!");
+        {          
+           
                 Console.Write("Enter Name: ");
                 string? name = Console.ReadLine();
                 Console.Write("Enter Password: ");
@@ -55,7 +51,7 @@ namespace Core.Controller
                         return (true, userID);
                     }
                 }
-            }
+           
             return (false, null);
         }
         public (bool, User?) Update(User? user)
