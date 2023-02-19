@@ -7,15 +7,16 @@ namespace MyApp // Note: actual namespace depends on the project name.
     {
         private CardDeck deck = new();
         private Player[] players;
+        public int NumPlayers { get; set; }
 
-        public Game()
+        public Game(int numPlayers)
         {
-            players = new[]
-            {
-             new Player("Дилер", deck),
-             new Player("Игрок", deck)
-         };
 
+            players = new Player[numPlayers];
+            for (int i = 0; i < players.Length; i++)
+            {
+                players[i] = new Player($"игрок{i}", deck);
+            }
             Start();
         }
 
@@ -80,4 +81,5 @@ namespace MyApp // Note: actual namespace depends on the project name.
             }
         }
     }
+
 }
