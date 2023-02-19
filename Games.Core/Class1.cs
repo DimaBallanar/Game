@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Games;
-using MyApp;
+﻿
 
 namespace Games.Core
 {
@@ -31,7 +25,7 @@ namespace Games.Core
         //{
         //    games.Start(out gameResult);
         //}
-        public GameClient car=new GameClient();
+        //private GameClient car=new GameClient();
 
     }
 }

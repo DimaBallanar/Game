@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Core.Controller;
 using Core.Models;
-using BlackJack;
+
 
 namespace Core.Menu
 {
@@ -130,7 +130,7 @@ namespace Core.Menu
                         else if (numberMenu.Equals("4"))
                         {
 
-                            GameClient 
+                           
                         }
                         else if (numberMenu.Equals("0"))
                         {
