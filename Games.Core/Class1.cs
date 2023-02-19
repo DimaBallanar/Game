@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Games;
-using GameXO;
+using MyApp;
 
 namespace Games.Core
 {
@@ -19,18 +19,19 @@ namespace Games.Core
         // отдельный фаил для породолжения игры !
 
         //
-        private XO games = new XO();
-        public int IdUser { get; set; }
+        //private XO games = new XO();
+        //public int IdUser { get; set; }
 
-        public GamesCore(int idUser)
-        {
-            IdUser = idUser;
-        }
+        //public GamesCore(int idUser)
+        //{
+        //    IdUser = idUser;
+        //}
 
-        public void MenuGames(out string gameResult)
-        {
-            games.Start(out gameResult);
-        }
+        //public void MenuGames(out string gameResult)
+        //{
+        //    games.Start(out gameResult);
+        //}
+        public GameClient car=new GameClient();
 
     }
 }

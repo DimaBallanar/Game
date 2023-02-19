@@ -1,4 +1,11 @@
-﻿namespace GameXO;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Games;
+
+namespace GameXO;
 public class XO
 {
     private char[,] _field = new char[3, 3] {
