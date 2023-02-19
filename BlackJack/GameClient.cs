@@ -11,20 +11,17 @@ namespace BlackJack
     {
         private CardDeck deck = new();
         private Player[] players;
-        public int NumPlayers { get;set; }
+        public int NumPlayers { get; set; }
 
         public GameClient(int numPlayers)
         {
 
             players = new Player[numPlayers];
-            players = new[]
+            for (int i = 0; i < players.Length; i++)
             {
-             new Player("Дилер", deck),
-             new Player("Игрок", deck)
-         };
-
+                players[i] = new Player($"игрок{i}", deck);
+            }
             Start();
-            
         }
 
         public bool IsEnded { get; private set; }
