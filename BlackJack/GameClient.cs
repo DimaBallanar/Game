@@ -11,9 +11,12 @@ namespace BlackJack
     {
         private CardDeck deck = new();
         private Player[] players;
+        public int NumPlayers { get;set; }
 
-        public GameClient()
+        public GameClient(int numPlayers)
         {
+
+            players = new Player[numPlayers];
             players = new[]
             {
              new Player("Дилер", deck),
@@ -21,6 +24,7 @@ namespace BlackJack
          };
 
             Start();
+            
         }
 
         public bool IsEnded { get; private set; }
