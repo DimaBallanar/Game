@@ -31,7 +31,6 @@ namespace Core.Controller
         }
         public (bool, User?) Create()
         {
-
             Console.Write("Enter Name: ");
             string? name = Console.ReadLine();
             Console.Write("Enter Password: ");

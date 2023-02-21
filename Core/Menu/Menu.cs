@@ -12,8 +12,10 @@ namespace Core.Menu
 {
     public static class Menu
     {
+        static PlatformController ControllerUser = new PlatformController();
         public static void MenuStart(bool autorizationIn, string? numberMenu, User? user)
         {
+            PlatformController ControllerUser = new PlatformController();
             while (true)
             {
                 Console.Clear();
@@ -30,8 +32,6 @@ namespace Core.Menu
                         Console.Clear();
                         while (true)
                         {
-
-                            PlatformController ControllerUser = new PlatformController();
                             (bool, User?) result = ControllerUser.Create();
                             break;
                         }
@@ -42,15 +42,13 @@ namespace Core.Menu
                         Console.Clear();
                         while (true)
                         {
-                            Console.Clear();
-                            PlatformController ControllerUser = new PlatformController();
+                            Console.Clear();                           
                             (bool, User?) result = ControllerUser.Login();
                             autorizationIn = result.Item1;
                             user = result.Item2;
                             break;
                         }
-                    }
-                                   
+                    }                                   
                 }
 
                 else if (autorizationIn)
@@ -75,14 +73,12 @@ namespace Core.Menu
                             Console.WriteLine("0 выход");
                             numberMenu = Console.ReadLine();
                             if (numberMenu.Equals("1"))
-                            {
-                                PlatformController ControllerUser = new PlatformController();
+                            {                               
                                 (bool, User?) result = ControllerUser.Update(user);
 
                             }
                             else if (numberMenu.Equals("2"))
-                            {
-                                PlatformController ControllerUser = new PlatformController();
+                            {                               
                                 (bool, User?) result = ControllerUser.Delete(user);
                                 autorizationIn = result.Item1;
                                 user = result.Item2;
@@ -93,7 +89,7 @@ namespace Core.Menu
                         else if (numberMenu.Equals("2"))
                         {
 
-                            // просмотр статистики
+                            // просмотр статистики игр
                         }
                         else if (numberMenu.Equals("3"))
                         {

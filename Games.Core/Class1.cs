@@ -25,7 +25,7 @@ namespace Games.Core
         //{
         //    games.Start(out gameResult);
         //}
-        //private GameClient car=new GameClient();
+        //Game.Main();
 
     }
 }
