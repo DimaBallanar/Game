@@ -20,10 +20,8 @@ namespace Core.Menu
                 if (!autorizationIn)
                 {
                     Console.Clear();
-                    Console.WriteLine("Список доступных меню:");
                     Console.WriteLine("1 Регистрация");
                     Console.WriteLine("2 Авторизация");
-                    Console.WriteLine("3 Игры");
                     Console.WriteLine("0 Выход из программы");
                     Console.WriteLine("Введите номер меню");
                     numberMenu = Console.ReadLine();
@@ -34,7 +32,7 @@ namespace Core.Menu
                         {
 
                             PlatformController ControllerUser = new PlatformController();
-                            (bool, User?) result = ControllerUser.Create();                            
+                            (bool, User?) result = ControllerUser.Create();
                             break;
                         }
                     }
@@ -52,31 +50,7 @@ namespace Core.Menu
                             break;
                         }
                     }
-                    else if (numberMenu.Equals("3"))
-                    {
-                        Console.Clear();
-                        while (true)
-                        {
-                            Console.Clear();
-                            Console.WriteLine("Статистика по играм");
-                            Console.WriteLine("1 крестики нолики");
-                            Console.WriteLine("2 БлекДжек");
-                            Console.WriteLine("0 Выход");
-                            numberMenu = Console.ReadLine();
-                            if (numberMenu.Equals("1"))
-                            {
-                                // статистика игре
-                            }
-                            if (numberMenu.Equals("2"))
-                            {
-                                // статистика игре
-                            }
-                            else if (numberMenu.Equals("0"))
-                            {
-                                break;
-                            }
-                        }
-                    }                    
+                                   
                 }
 
                 else if (autorizationIn)
@@ -85,12 +59,11 @@ namespace Core.Menu
                     while (true)
                     {
                         Console.Clear();
-                        Console.WriteLine($"Hello {user.Name}");
-                        Console.WriteLine("Список доступных меню:");
+                        Console.WriteLine($"{user.Name}");
+
                         Console.WriteLine("1 Изменение аккаунта");
                         Console.WriteLine("2 Просмотр статистики");
-                        Console.WriteLine("3 Игра Крестики Нолики");
-                        Console.WriteLine("4 Игра БлекДжек");
+                        Console.WriteLine("3 Игра БлекДжек");
                         Console.WriteLine("0 Выход из Аккаунта");
                         Console.WriteLine("Введите номер меню");
                         numberMenu = Console.ReadLine();
@@ -105,7 +78,7 @@ namespace Core.Menu
                             {
                                 PlatformController ControllerUser = new PlatformController();
                                 (bool, User?) result = ControllerUser.Update(user);
-                                
+
                             }
                             else if (numberMenu.Equals("2"))
                             {
@@ -125,12 +98,12 @@ namespace Core.Menu
                         else if (numberMenu.Equals("3"))
                         {
 
-                            // Вызов игры крестики нолики
+                            // блекджек
                         }
                         else if (numberMenu.Equals("4"))
                         {
 
-                           
+                            //морской бой
                         }
                         else if (numberMenu.Equals("0"))
                         {
@@ -145,7 +118,7 @@ namespace Core.Menu
                 }
 
             }
-            Console.WriteLine("hello");
+            Console.WriteLine("Hello");
         }
     }
 }
