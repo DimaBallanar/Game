@@ -51,7 +51,7 @@ namespace Core.Controller
             if (user == null)
             {
                 return (false, null);
-            }          
+            }
             Console.Write("Enter new Password: ");
             string? password = Console.ReadLine();
             if (!string.IsNullOrEmpty(password))
@@ -72,18 +72,12 @@ namespace Core.Controller
             {
                 return (false, null);
             }
-            Console.WriteLine("Hello!  Do you want to delete your account? Y/N");
-            string? menu = Console.ReadLine();
-            if (menu.ToUpper().Equals("Y"))
-            {
-                Console.WriteLine("Great!");
-                if (servicUser.Delete(user))
-                {
-                    Console.WriteLine("Succes");
-                    return (false, null);
-                }
-            }
+            servicUser.Delete(user);
+            Console.WriteLine("Пользователь удален");
             return (false, null);
+
+
+
         }
     }
 }
