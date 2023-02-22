@@ -4,9 +4,9 @@ namespace Games.Shared
 {
     public enum EnumGame
     {
-        XO = 1,
-        BlackJack = 2,
-        ShipBattle = 3
+        
+        BlackJack = 1,
+        ShipBattle = 2
     }
 }
 

@@ -4,7 +4,6 @@ using Core.Menu;
 using Core.Models;
 using Games.Core;
 using Games;
-using GameXO;
 
 namespace GamingDesktopApp;
 internal class Program
@@ -15,7 +14,6 @@ internal class Program
         string? menu = "";
         User? user = null;
         Menu.MenuStart(autorizationIn, menu, user);
-        //XO start = new XO();
-        //start.Start();
+        
     }
 }
