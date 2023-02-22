@@ -10,7 +10,7 @@ namespace Core.Repositories
 {
     public abstract class BaseRepository<T>
     {
-        protected abstract string path { get; }
+        protected abstract string Path { get; }
         public List<T> GetAll()
         {
             List<T> data = new List<T>();
@@ -20,14 +20,18 @@ namespace Core.Repositories
             };
             try
             {
-                using StreamReader sr1 = new StreamReader($"{path}users.txt");
-                string line = sr1.ReadLine();
-                while (line != null)
+                using StreamReader sr1 = new StreamReader(Path);
+                for (string line = sr1.ReadLine(); line != null; line = sr1.ReadLine())
                 {
-                    var fild = JsonSerializer.Deserialize<T>(line, serializeoptions);
-                    data.Add(fild);
-                    line = sr1.ReadLine();
-                };
+                    data.Add(JsonSerializer.Deserialize<T>(line, serializeoptions));
+                }
+                //string line = sr1.ReadLine();
+                //while (line != null)
+                //{
+                //    var fild = JsonSerializer.Deserialize<T>(line, serializeoptions);
+                //    data.Add(fild);
+                //    line = sr1.ReadLine();
+                //};
                 sr1.Close();
                 return data;
             }
@@ -48,7 +52,7 @@ namespace Core.Repositories
                 {
                     PropertyNamingPolicy = JsonNamingPolicy.CamelCase
                 };
-                StreamWriter sw1 = new StreamWriter($"{path}users.txt");
+                StreamWriter sw1 = new StreamWriter(Path);
                 for (int i = 0; i < userList.Count; i++)
                 {
                     if (userList[i] != null)
