@@ -24,7 +24,7 @@ namespace Core.Menu
                     Console.Clear();
                     Console.WriteLine("1 Регистрация");
                     Console.WriteLine("2 Авторизация");
-                    Console.WriteLine("0 Выход из программы");
+                    //Console.WriteLine("0 Выход из программы");
                     Console.WriteLine("Введите номер меню");
                     numberMenu = Console.ReadLine();
                     if (numberMenu.Equals("1"))
@@ -95,6 +95,7 @@ namespace Core.Menu
                         {
 
                             // блекджек
+                            //Game opor = new Game();
                         }
                         else if (numberMenu.Equals("4"))
                         {
