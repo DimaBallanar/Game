@@ -10,7 +10,7 @@ namespace Core.Repositories
 {
     public class UserRepository : BaseRepository<User>
     {
-        protected override string path { get; } = AppDomain.CurrentDomain.BaseDirectory;
+        protected override string Path  => AppDomain.CurrentDomain.BaseDirectory+"users.txt";
         public User GetByName(string login)
         {
             List<User> userList = GetAll();
