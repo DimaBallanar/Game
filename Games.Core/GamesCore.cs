@@ -1,5 +1,4 @@
 ﻿
-using BlackJack;
 
 namespace Games.Core
 {
@@ -14,7 +13,8 @@ namespace Games.Core
         // отдельный фаил для породолжения игры !
 
         //
-        GameJack.Main();
+        Game game = new Game();
+        //game.Play();
         public int IdUser { get; set; }
 
         public GamesCore(int idUser)
@@ -24,9 +24,9 @@ namespace Games.Core
 
         public void MenuGames(out string gameResult)
         {
-            games.Start(out gameResult);
+            game.Start(out gameResult);
         }
-        Game.Main();
+       
 
     }
 }

@@ -21,7 +21,6 @@ namespace BlackJack
 
             if (playerHand.IsBusted())
             {
-                Console.WriteLine("You dun fucked up, son!");
                 Console.WriteLine("Game Over!");
                 return;
             }
