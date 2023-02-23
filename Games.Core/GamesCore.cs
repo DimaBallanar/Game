@@ -3,9 +3,9 @@ using Games.Shared;
 
 namespace Games.Core
 {
-    public class GamesCore:IGameMenu
+    public class GamesCore : IGameMenu
     {
-        
+
 
         Game game = new Game();
         //game.Play();
@@ -14,7 +14,18 @@ namespace Games.Core
         public GamesCore(int idUser)
         {
             IdUser = idUser;
-
+        }
+        public void StartMenu()
+        {
+            Console.WriteLine("хотите начать заново?д/н");
+            if (Console.ReadLine() == "д")
+            {
+                StartGame();
+            }
+            else
+            {
+                StartWithSave();
+            }
         }
         public void StartGame()
         {
@@ -32,7 +43,7 @@ namespace Games.Core
         {
 
         }
-      
+
 
 
         //public void MenuGames(out string gameResult)

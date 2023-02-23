@@ -95,7 +95,7 @@ namespace Core.Menu
                         else if (numberMenu.Equals("3"))
                         {
                             GamesCore game = new GamesCore(user.Id);
-                            game.Poehali();
+                            game.StartMenu();
 
                             // блекджек
                             //Game opor = new Game();
