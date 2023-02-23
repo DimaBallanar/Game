@@ -89,7 +89,9 @@ namespace Core.Menu
                         else if (numberMenu.Equals("2"))
                         {
 
-                            // просмотр статистики игр
+                            UserStatsController stats = new UserStatsController();
+                            stats.GetAllStats();
+                            Console.ReadKey();
                         }
                         else if (numberMenu.Equals("3"))
                         {

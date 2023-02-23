@@ -1,26 +1,27 @@
-﻿using Core.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Core.Models;
+using System.Text.Json;
 
 namespace Core.Repositories
 {
-    public class StatsRepository:BaseRepository
+    public class StatsRepository : BaseRepository<UserStats>
     {
-         
-        protected override string Path { get; } = AppDomain.CurrentDomain.BaseDirectory + "stats.txt";
+
+        protected override string Path { get; } = AppDomain.CurrentDomain.BaseDirectory + "UserStats.txt";
         public void AddUserStats(UserStats userStats)
         {
             if (userStats == null) throw new ArgumentNullException(nameof(userStats));
-            List<UserStats> users = GetAll().ToList();
-            users.Add(userStats);
-            UpdateFile(users);
+            List<UserStats> usersStats = GetAll();
+            usersStats.Add(userStats);
+            UpdateFile(usersStats);
         }
         public List<UserStats> GetUserStats(int id)
         {
-            List<UserStats> users = GetAll().ToList();
+            List<UserStats> users = GetAll();
             List<UserStats> stats = new List<UserStats>();
             for (int i = 0; i < users.Count; i++)
             {
@@ -33,7 +34,7 @@ namespace Core.Repositories
         }
         public List<UserStats> GetAllStats()
         {
-            List<UserStats> users = GetAll().ToList();
+            List<UserStats> users = GetAll();
             return users;
         }
     }
