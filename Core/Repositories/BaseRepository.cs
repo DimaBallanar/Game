@@ -24,14 +24,7 @@ namespace Core.Repositories
                 for (string line = sr1.ReadLine(); line != null; line = sr1.ReadLine())
                 {
                     data.Add(JsonSerializer.Deserialize<T>(line, serializeoptions));
-                }
-                //string line = sr1.ReadLine();
-                //while (line != null)
-                //{
-                //    var fild = JsonSerializer.Deserialize<T>(line, serializeoptions);
-                //    data.Add(fild);
-                //    line = sr1.ReadLine();
-                //};
+                }               
                 sr1.Close();
                 return data;
             }

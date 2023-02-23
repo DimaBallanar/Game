@@ -14,14 +14,16 @@ namespace BlackJack
             deck = new Deck();
         }
 
-        public void Start()
+        public void Start(int id,out string result)
         {
+             result = null;
             Player player = new Player();
             Hand playerHand = player.Deal(deck);
 
             if (playerHand.IsBusted())
             {
                 Console.WriteLine("Game Over!");
+                result = "win";
                 return;
             }
             else
@@ -40,6 +42,7 @@ namespace BlackJack
             {
                 Console.Write("Диллер проиграл!");
                 Console.WriteLine("Игрок победил!");
+                result = "loss";
                 return;
             }
 
@@ -56,6 +59,7 @@ namespace BlackJack
                 Console.WriteLine("Game Over!");
                 Console.ReadKey();
             }
+            
         }
     }
 }

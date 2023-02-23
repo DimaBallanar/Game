@@ -8,7 +8,7 @@ namespace Games.Shared
 {
     public interface IGameMenu
     {
-        public void StartGame();
+        public void StartGame(out string result);
         public void StopGame();
         public void Settings();
         public void StartWithSave();

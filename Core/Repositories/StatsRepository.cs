@@ -25,7 +25,7 @@ namespace Core.Repositories
             List<UserStats> Userstats = new List<UserStats>();
             for (int i = 0; i < users.Count; i++)
             {
-                if (users[i].user.Id == id)
+                if (users[i].User.Id == id)
                 {
                     Userstats.Add(users[i]);
                 }

@@ -8,20 +8,21 @@ namespace Core.Models
 {
     public class UserStats
     {
-        public User user { get; set; }
+        public User User { get; set; }
+        //private int IdUser { get; set; }
         public string GameResult { get; set; }
         public string GameName { get; set; }
         public DateTime time = DateTime.Now;
 
         public UserStats(User user, string gameResult)
         {
-            this.user = user;
+            this.User = user;
             GameResult = gameResult;
         }
 
         public override string ToString()
         {
-            return $"User {user.Name} {GameName} result: {GameResult} {time}";
+            return $"User {User.Id} {GameName} result: {GameResult} {time}";
         }
     }
 }

@@ -15,21 +15,27 @@ namespace Games.Core
         {
             IdUser = idUser;
         }
-        public void StartMenu()
+        public void StartMenu(out string result)
         {
+            result = null;
             Console.WriteLine("хотите начать заново?д/н");
             if (Console.ReadLine() == "д")
             {
-                StartGame();
+                StartGame(out  result);
+                Console.WriteLine("сыграем еще?д/н");
+                if (Console.ReadLine() == "д")
+                {
+                    StartGame(out  result);
+                }
             }
             else
             {
                 StartWithSave();
             }
         }
-        public void StartGame()
+        public void StartGame(out string result)
         {
-            game.Start();
+            game.Start(IdUser,out  result);
         }
         public void StopGame()
         {

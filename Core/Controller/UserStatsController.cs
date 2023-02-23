@@ -26,7 +26,7 @@ namespace Core.Controller
             }
             return true;
         }
-        public bool GetUserStat(Models.User user)
+        public bool GetUserStat(User user)
         {
             List<UserStats> stats = _service.GetStatsUser(user.Id);
             if (stats == null)
@@ -40,7 +40,7 @@ namespace Core.Controller
             }
             return true;
         }
-        public bool AddUserStat(Models.User user, string gameResult)
+        public bool AddUserStat(User user, string gameResult)
         {
             if (user != null && gameResult != null)
             {
