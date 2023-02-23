@@ -88,7 +88,6 @@ namespace Core.Menu
                         }
                         else if (numberMenu.Equals("2"))
                         {
-
                             UserStatsController stats = new UserStatsController();
                             stats.GetAllStats();
                             Console.ReadKey();

@@ -22,20 +22,20 @@ namespace Core.Repositories
         public List<UserStats> GetUserStats(int id)
         {
             List<UserStats> users = GetAll();
-            List<UserStats> stats = new List<UserStats>();
+            List<UserStats> Userstats = new List<UserStats>();
             for (int i = 0; i < users.Count; i++)
             {
                 if (users[i].user.Id == id)
                 {
-                    stats.Add(users[i]);
+                    Userstats.Add(users[i]);
                 }
             }
-            return stats;
+            return Userstats;
         }
         public List<UserStats> GetAllStats()
         {
-            List<UserStats> users = GetAll();
-            return users;
+            List<UserStats> Userstats = GetAll();
+            return Userstats;
         }
     }
 }

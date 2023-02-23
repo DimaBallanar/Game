@@ -15,7 +15,7 @@ namespace Core.Controller
         public bool GetAllStats()
         {
             List<UserStats> stats = _service.GetAllStats();
-            if (stats == null)
+            if (stats == null || stats.Count == 0)
             {
                 Console.WriteLine($"Статистики нет");
                 return false;
