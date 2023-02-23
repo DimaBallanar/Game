@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Core.Controller;
 using Core.Models;
-
+using Games.Core;
 
 namespace Core.Menu
 {
@@ -94,6 +94,8 @@ namespace Core.Menu
                         }
                         else if (numberMenu.Equals("3"))
                         {
+                            GamesCore game = new GamesCore(user.Id);
+                            game.Poehali();
 
                             // блекджек
                             //Game opor = new Game();

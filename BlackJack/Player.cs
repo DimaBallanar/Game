@@ -24,19 +24,19 @@ namespace BlackJack
             bool playing = true;
             while (playing)
             {
-                Console.Write("Would you like to Hit (H) or Stay (S)?: ");
+                Console.Write("взять еще карту (Д) или хватит (Н)?: ");
                 string response = Console.ReadLine();
                 switch (response.ToUpper())
                 {
-                    case "H":
+                    case "Д":
                         DealCards(1, deck);
                         playing = !hand.IsBusted();
                         break;
-                    case "S":
+                    case "Н":
                         playing = false;
                         break;
                     default:
-                        Console.WriteLine("Invalid Input");
+                        Console.WriteLine("неверный ввод");
                         break;
                 }
             }

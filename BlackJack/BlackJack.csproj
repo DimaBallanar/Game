@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Games.Core\Games.Core.csproj" />
+    <ProjectReference Include="..\Games.Shared\Games.Shared.csproj" />
   </ItemGroup>
 
 </Project>

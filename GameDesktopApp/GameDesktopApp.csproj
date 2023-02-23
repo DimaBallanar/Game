@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BlackJack\BlackJack.csproj" />
     <ProjectReference Include="..\Core\Core.csproj" />
   </ItemGroup>
 

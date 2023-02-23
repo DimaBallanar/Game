@@ -14,7 +14,7 @@ namespace BlackJack
             deck = new Deck();
         }
 
-        public void Play()
+        public void Start()
         {
             Player player = new Player();
             Hand playerHand = player.Deal(deck);
@@ -30,7 +30,7 @@ namespace BlackJack
             }
 
             Console.WriteLine();
-            Console.WriteLine("Dealer Playing");
+            Console.WriteLine("Играет Диллер");
 
             Dealer dealer = new Dealer();
             Hand dealerHand = dealer.Deal(deck);
@@ -38,15 +38,15 @@ namespace BlackJack
             Console.WriteLine();
             if (dealerHand.IsBusted())
             {
-                Console.Write("Dealer busted!");
-                Console.WriteLine("Player Wins!");
+                Console.Write("Диллер проиграл!");
+                Console.WriteLine("Игрок победил!");
                 return;
             }
 
             Console.WriteLine();
             if (playerHand.Total() > dealerHand.Total())
             {
-                Console.WriteLine("Player's {0} beats Dealer's {1}", playerHand.Total(), dealerHand.Total());
+                Console.WriteLine("Player's {0} beats Dealer's {1}", playerHand.Total(), dealerHand.Total()); ;
                 Console.WriteLine("Player Wins!");
             }
             else

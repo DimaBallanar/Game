@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Games.Shared
 {
-    internal interface IGameMenu
+    public interface IGameMenu
     {
         public void StartGame();
         public void StopGame();

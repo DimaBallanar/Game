@@ -6,7 +6,7 @@
         {
             Console.WriteLine("Welcome to C# BlackJack");
             Game game = new Game();
-            game.Play();
+            //game.Play();
         }
     }
 }
