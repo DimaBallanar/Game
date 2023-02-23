@@ -1,21 +1,23 @@
-﻿using BlackJack;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-public class Card	
+namespace BlackJack
 {
-    public string Name { get; set; }
-    public int Value { get; set; }
-    //public CardTypes Type { get; set; }
-    public CardEnum CardEnum { get; set; }
-    public Card(string name, int value,/* CardTypes type,*/CardEnum card)
+    public class Card
     {
-        Name = name;
-        Value = value;
-        //Type = type;
-        CardEnum = card;
+        public int Value { get; }
+
+        public Card(int value)
+        {
+            Value = value;
+        }
+
+        public override string ToString()
+        {
+            return Value.ToString();
+        }
     }
-       
-
-    
-
 }

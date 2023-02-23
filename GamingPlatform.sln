@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Games.Core", "Games.Core\Ga
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Games.Shared", "Games.Shared\Games.Shared.csproj", "{B970CFCB-91A8-4645-B8D4-575B408F53C4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlackJack", "C:\Users\37525\Desktop\скрины\BlackJack\BlackJack.csproj", "{13A5D2CA-F287-40B6-AD85-212867F66626}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlackJack", "BlackJack\BlackJack.csproj", "{42A1081F-5545-4C09-AED8-BA4E82EAA194}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,10 +37,10 @@ Global
 		{B970CFCB-91A8-4645-B8D4-575B408F53C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B970CFCB-91A8-4645-B8D4-575B408F53C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B970CFCB-91A8-4645-B8D4-575B408F53C4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{13A5D2CA-F287-40B6-AD85-212867F66626}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{13A5D2CA-F287-40B6-AD85-212867F66626}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{13A5D2CA-F287-40B6-AD85-212867F66626}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{13A5D2CA-F287-40B6-AD85-212867F66626}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42A1081F-5545-4C09-AED8-BA4E82EAA194}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42A1081F-5545-4C09-AED8-BA4E82EAA194}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42A1081F-5545-4C09-AED8-BA4E82EAA194}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42A1081F-5545-4C09-AED8-BA4E82EAA194}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,7 +48,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{E5973B37-9BD4-4F4E-B95A-CFC203102CD3} = {89825EC2-91CB-4AFC-8FDA-71B202C918DD}
 		{B970CFCB-91A8-4645-B8D4-575B408F53C4} = {89825EC2-91CB-4AFC-8FDA-71B202C918DD}
-		{13A5D2CA-F287-40B6-AD85-212867F66626} = {89825EC2-91CB-4AFC-8FDA-71B202C918DD}
+		{42A1081F-5545-4C09-AED8-BA4E82EAA194} = {89825EC2-91CB-4AFC-8FDA-71B202C918DD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4DFDAE25-C202-4166-8C60-4C575A442AB8}
