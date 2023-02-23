@@ -48,11 +48,13 @@ namespace BlackJack
             {
                 Console.WriteLine("Player's {0} beats Dealer's {1}", playerHand.Total(), dealerHand.Total()); ;
                 Console.WriteLine("Player Wins!");
+                Console.ReadKey();
             }
             else
             {
                 Console.WriteLine("Dealer's {1} beats Player's {0}", playerHand.Total(), dealerHand.Total());
                 Console.WriteLine("Game Over!");
+                Console.ReadKey();
             }
         }
     }

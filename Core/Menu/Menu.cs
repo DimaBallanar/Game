@@ -96,13 +96,10 @@ namespace Core.Menu
                         {
                             GamesCore game = new GamesCore(user.Id);
                             game.StartMenu();
-
-                            // блекджек
-                            //Game opor = new Game();
                         }
                         else if (numberMenu.Equals("4"))
                         {
-
+                            Console.ReadKey();
                             //морской бой
                         }
                         else if (numberMenu.Equals("0"))
