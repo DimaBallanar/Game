@@ -67,8 +67,5 @@ namespace Core.Repositories
             int lastID = userList.LastOrDefault()?.Id ?? 0;
             return ++lastID;
         }
-
-
-
     }
 }
