@@ -21,21 +21,21 @@ namespace Core.Repositories
         }
         public List<UserStats> GetUserStats(int id)
         {
-            List<UserStats> users = GetAll().ToList()   ;
+            List<UserStats> stats = GetAll().ToList()   ;
             List<UserStats> userstats = new List<UserStats>();
-            for (int i = 0; i < users.Count; i++)
+            for (int i = 0; i < stats.Count; i++)
             {
-                if (users[i].User.Id == id)
+                if (stats[i].User.Id == id)
                 {
-                    userstats.Add(users[i]);
+                    userstats.Add(stats[i]);
                 }
             }
             return userstats;
         }
         public List<UserStats> GetAllStats()
         {
-            List<UserStats> Userstats = GetAll().ToList();
-            return Userstats;
+            List<UserStats> stats = GetAll().ToList();
+            return stats;
         }
     }
 }

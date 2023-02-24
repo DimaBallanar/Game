@@ -29,7 +29,7 @@ namespace Core.Controller
         public bool GetUserStat(User user)
         {
             List<UserStats> stats = _service.GetStatsUser(user.Id);
-            if (stats == null)
+            if (stats == null  )
             {
                 Console.WriteLine($"Статистики по {user.Name} нет");
                 return false;
