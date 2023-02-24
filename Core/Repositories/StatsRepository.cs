@@ -15,22 +15,22 @@ namespace Core.Repositories
         public void AddUserStats(UserStats userStats)
         {
             if (userStats == null) throw new ArgumentNullException(nameof(userStats));
-            List<UserStats> usersStats = GetAll().ToList();
-            usersStats.Add(userStats);
-            UpdateFile(usersStats);
+            List<UserStats> stats = GetAll().ToList();
+            stats.Add(userStats);
+            UpdateFile(stats);
         }
         public List<UserStats> GetUserStats(int id)
         {
             List<UserStats> users = GetAll().ToList()   ;
-            List<UserStats> Userstats = new List<UserStats>();
+            List<UserStats> userstats = new List<UserStats>();
             for (int i = 0; i < users.Count; i++)
             {
                 if (users[i].User.Id == id)
                 {
-                    Userstats.Add(users[i]);
+                    userstats.Add(users[i]);
                 }
             }
-            return Userstats;
+            return userstats;
         }
         public List<UserStats> GetAllStats()
         {
