@@ -11,31 +11,31 @@ namespace Core.Repositories
     public class StatsRepository : BaseRepository<UserStats>
     {
 
-        protected override string Path { get; } = AppDomain.CurrentDomain.BaseDirectory + "UserStats.txt";
+        protected override string Path { get; } = AppDomain.CurrentDomain.BaseDirectory + "stats.txt";
         public void AddUserStats(UserStats userStats)
         {
             if (userStats == null) throw new ArgumentNullException(nameof(userStats));
-            List<UserStats> stats = GetAll().ToList();
-            stats.Add(userStats);
-            UpdateFile(stats);
+            List<UserStats> users = GetAll().ToList();
+            users.Add(userStats);
+            UpdateFile(users);
         }
         public List<UserStats> GetUserStats(int id)
         {
-            List<UserStats> stats = GetAll().ToList()   ;
-            List<UserStats> userstats = new List<UserStats>();
-            for (int i = 0; i < stats.Count; i++)
+            List<UserStats> users = GetAll().ToList();
+            List<UserStats> stats = new List<UserStats>();
+            for (int i = 0; i < users.Count; i++)
             {
-                if (stats[i].User.Id == id)
+                if (users[i].User.Id == id)
                 {
-                    userstats.Add(stats[i]);
+                    stats.Add(users[i]);
                 }
             }
-            return userstats;
+            return stats;
         }
         public List<UserStats> GetAllStats()
         {
-            List<UserStats> stats = GetAll().ToList();
-            return stats;
+            List<UserStats> users = GetAll().ToList();
+            return users;
         }
     }
 }
