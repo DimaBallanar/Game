@@ -49,14 +49,20 @@ namespace BlackJack
             Console.WriteLine();
             if (playerHand.Total() > dealerHand.Total())
             {
-                Console.WriteLine("Player's {0} beats Dealer's {1}", playerHand.Total(), dealerHand.Total()); ;
+                Console.WriteLine("игрок {0} победил дилера {1}", playerHand.Total(), dealerHand.Total()); ;
                 Console.WriteLine("Player Wins!");
+                Console.ReadKey();
+            }
+            else if(playerHand.Total() < dealerHand.Total())
+            {
+                Console.WriteLine("дилер {1} победил игрока {0}", playerHand.Total(), dealerHand.Total());
+                Console.WriteLine("Игрок проиграл!");
                 Console.ReadKey();
             }
             else
             {
-                Console.WriteLine("Dealer's {1} beats Player's {0}", playerHand.Total(), dealerHand.Total());
-                Console.WriteLine("Game Over!");
+                Console.WriteLine("дилер {1} = игрок {0}", playerHand.Total(), dealerHand.Total());
+                Console.WriteLine("Ничья");
                 Console.ReadKey();
             }
             
