@@ -9,8 +9,10 @@ namespace BlackJack
     public class Game
     {
         Deck deck;
+        public string NameGame { get; set; }
         public Game()
         {
+            NameGame="BlackJack";
             deck = new Deck();
         }
 
