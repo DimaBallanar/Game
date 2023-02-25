@@ -14,10 +14,11 @@ namespace Core.Models
         public string GameName { get; set; }
         public DateTime time = DateTime.Now;
 
-        public UserStats(User user, string gameResult)
+        public UserStats(User user, string gameResult,string gameName)
         {
-            this.User = user;
+            User.Name = user.Name;
             GameResult = gameResult;
+            GameName = gameName;
         }
 
         public override string ToString()
