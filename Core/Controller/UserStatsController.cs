@@ -40,11 +40,11 @@ namespace Core.Controller
             }
             return true;
         }
-        public bool AddUserStat(User user, string gameResult)
+        public bool AddUserStat(User user, string gameResult,string gameName)
         {
             if (user != null && gameResult != null)
             {
-                UserStats stats = new UserStats(user, gameResult);
+                UserStats stats = new UserStats(user, gameResult,gameName);
                 _service.AddUserStats(stats);
                 return true;
             }
