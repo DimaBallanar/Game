@@ -8,7 +8,7 @@ namespace Games.Core
 
 
         Game game = new Game();
-        //game.Play();
+    
         public int IdUser { get; set; }
 
         public GamesCore(int idUser)
