@@ -50,8 +50,7 @@ namespace Games.Core
 
         }
 
-        //public void MenuGames(out string gameResult)
-        //{
+        
         
        
 
