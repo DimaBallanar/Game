@@ -55,8 +55,7 @@ namespace Games.Core
         //public void MenuGames(out string gameResult)
         //{
         //    game.Start(out gameResult);
-        //}
-
+       
 
     }
 }
