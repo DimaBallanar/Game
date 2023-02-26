@@ -8,7 +8,7 @@ namespace Games.Core
 
 
         Game game = new Game();
-    
+
         public int IdUser { get; set; }
 
         public GamesCore(int idUser)
@@ -21,11 +21,11 @@ namespace Games.Core
             Console.WriteLine("хотите начать заново?д/н");
             if (Console.ReadLine() == "д")
             {
-                StartGame(out  result);
+                StartGame(out result);
                 Console.WriteLine("сыграем еще?д/н");
                 if (Console.ReadLine() == "д")
                 {
-                    StartGame(out  result);
+                    StartGame(out result);
                 }
             }
             else
@@ -35,7 +35,7 @@ namespace Games.Core
         }
         public void StartGame(out string result)
         {
-            game.Start(IdUser,out  result);
+            game.Start(IdUser, out result);
         }
         public void StopGame()
         {
@@ -49,10 +49,6 @@ namespace Games.Core
         {
 
         }
-
-        
-        
-       
 
     }
 }
