@@ -94,7 +94,7 @@ namespace Core.Menu
                         }
                         else if (numberMenu.Equals("3"))
                         {
-                            GamesCore game = new GamesCore(user.Id);
+                            GamesCore game = new GamesCore();
                             game.StartMenu(out string result);
                             UserStatsController stats = new UserStatsController();
                             stats.AddUserStat(user, result,game.Name);
