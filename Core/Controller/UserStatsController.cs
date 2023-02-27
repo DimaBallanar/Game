@@ -44,12 +44,17 @@ namespace Core.Controller
         {
             if (user != null && gameResult != null)
             {
-                UserStats stats = new UserStats(user, gameResult,gameName);
+                UserStats stats = new UserStats(user.Id, gameResult,gameName);
                 _service.AddUserStats(stats);
                 return true;
             }
             return false;
 
+        }
+
+        internal void AddUserStat(string result, string name)
+        {
+            throw new NotImplementedException();
         }
     }
 }
