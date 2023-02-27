@@ -8,12 +8,13 @@ namespace Games.Core
 
 
         Game game = new Game();
+        public string Name { get; set; }
+        //public int IdUser { get; set; }
 
-        public int IdUser { get; set; }
-
-        public GamesCore(int idUser)
+        public GamesCore()
         {
-            IdUser = idUser;
+            //IdUser = idUser;
+            Name = game.NameGame;
         }
         public void StartMenu(out string result)
         {
@@ -35,7 +36,7 @@ namespace Games.Core
         }
         public void StartGame(out string result)
         {
-            game.Start(IdUser, out result);
+            game.Start( out result);
         }
         public void StopGame()
         {
