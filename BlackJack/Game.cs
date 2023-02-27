@@ -16,7 +16,7 @@ namespace BlackJack
             deck = new Deck();
         }
 
-        public void Start(int id,out string result)
+        public void Start(out string result)
         {
              result = null;
             Player player = new Player();
