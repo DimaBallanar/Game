@@ -2,28 +2,30 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Core.Models
 {
     public class UserStats
     {
-        public User User { get; set; }
-        //private int IdUser { get; set; }
+        //public User User { get; set; }
+        public int Id { get; set; }
         public string GameResult { get; set; }
         public string GameName { get; set; }
-        public DateTime time = DateTime.Now;
-
-        public UserStats(User user, string gameResult,string gameName)
+        public DateTime Time = DateTime.Now;
+        
+        public UserStats(int id, string gameResult, string gameName)
         {
-            User.Name = user.Name;
+            Id = id;
             GameResult = gameResult;
             GameName = gameName;
+            //Time = DateTime.Now;
         }
 
         public override string ToString()
         {
-            return $"User {User.Id} {GameName} result: {GameResult} {time}";
+            return $"User {Id} {GameName} result: {GameResult} {Time}";
         }
     }
 }
