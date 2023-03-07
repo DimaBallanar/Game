@@ -15,7 +15,7 @@ namespace Core.Menu
         static PlatformController ControllerUser = new PlatformController();
         public static void MenuStart(bool autorizationIn, string? numberMenu, User? user)
         {
-            PlatformController ControllerUser = new PlatformController();
+            //PlatformController ControllerUser = new PlatformController();
             while (true)
             {
                 Console.Clear();
@@ -89,20 +89,24 @@ namespace Core.Menu
                         else if (numberMenu.Equals("2"))
                         {
                             UserStatsController stats = new UserStatsController();
-                            stats.GetAllStats();
+                            //stats.GetAllStats();
+                            stats.GetUserStat(user);
+
                             Console.ReadKey();
                         }
                         else if (numberMenu.Equals("3"))
                         {
+                            //PlayGame(user);
                             GamesCore game = new GamesCore();
                             game.StartMenu(out string result);
                             UserStatsController stats = new UserStatsController();
-                            stats.AddUserStat(user, result,game.Name);
+                            stats.AddUserStat(user, result, game.Name);
                             Console.WriteLine("сыграем еще?д/н");
-                            if (Console.ReadLine() == "д")
+                            while (Console.ReadLine()=="д")
                             {
-                                game.StartMenu(out result);
-                            }
+                               MenuStart(true, "3", user);
+                            }    
+                            
 
                         }
                         else if (numberMenu.Equals("4"))
@@ -121,9 +125,25 @@ namespace Core.Menu
                 {
                     break;
                 }
+                
 
             }
             Console.WriteLine("Hello");
+           
         }
+        //static void PlayGame(User user)
+        //{
+        //    GamesCore game = new GamesCore();
+        //    game.StartMenu(out string result);
+        //    UserStatsController stats = new UserStatsController();
+        //    stats.AddUserStat(user, result, game.Name);
+        //    if (Console.ReadLine() == "д")
+        //    {
+        //        PlayGame(user);
+        //    }
+        //}
+
     }
+
+    
 }

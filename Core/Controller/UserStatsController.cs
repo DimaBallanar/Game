@@ -34,9 +34,13 @@ namespace Core.Controller
                 Console.WriteLine($"Статистики по {user.Name} нет");
                 return false;
             }
+           
             for (int i = 0; i < stats.Count; i++)
             {
-                Console.WriteLine(stats[i]);
+                if (user.Id == stats[i].Id)
+                {
+                    Console.WriteLine(stats[i]);
+                }
             }
             return true;
         }

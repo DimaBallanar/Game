@@ -1,5 +1,6 @@
 ﻿using BlackJack;
 using Games.Shared;
+using Games.Core;
 
 namespace Games.Core
 {
@@ -37,7 +38,6 @@ namespace Games.Core
         public void StartGame(out string result)
         {
             game.Start( out result);
-
         }
         public void StopGame()
         {
