@@ -23,11 +23,11 @@ namespace Games.Core
             if (Console.ReadLine() == "д")
             {
                 StartGame(out result);
-                Console.WriteLine("сыграем еще?д/н");
-                if (Console.ReadLine() == "д")
-                {
-                    StartGame(out result);
-                }
+                //Console.WriteLine("сыграем еще?д/н");
+                //if (Console.ReadLine() == "д")
+                //{
+                //    StartGame(out result);
+                //}
             }
             else
             {
@@ -37,6 +37,7 @@ namespace Games.Core
         public void StartGame(out string result)
         {
             game.Start( out result);
+
         }
         public void StopGame()
         {

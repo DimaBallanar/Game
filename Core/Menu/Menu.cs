@@ -98,6 +98,12 @@ namespace Core.Menu
                             game.StartMenu(out string result);
                             UserStatsController stats = new UserStatsController();
                             stats.AddUserStat(user, result,game.Name);
+                            Console.WriteLine("сыграем еще?д/н");
+                            if (Console.ReadLine() == "д")
+                            {
+                                game.StartMenu(out result);
+                            }
+
                         }
                         else if (numberMenu.Equals("4"))
                         {
