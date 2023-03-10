@@ -16,6 +16,7 @@ namespace Core.Menu
         public static void MenuStart(bool autorizationIn, string? numberMenu, User? user)
         {
             while (true)
+
             {
                 Console.Clear();
                 if (!autorizationIn)
@@ -88,23 +89,21 @@ namespace Core.Menu
                         else if (numberMenu.Equals("2"))
                         {
                             UserStatsController stats = new UserStatsController();
-                            //stats.GetAllStats();
                             stats.GetUserStat(user);
 
                             Console.ReadKey();
                         }
                         else if (numberMenu.Equals("3"))
                         {
-                            //PlayGame(user);
                             GamesCore game = new GamesCore();
                             game.StartMenu(out string result);
                             UserStatsController stats = new UserStatsController();
                             stats.AddUserStat(user, result, game.Name);
-                            Console.WriteLine("сыграем еще?д/н");
-                            while (Console.ReadLine()=="д")
-                            {
-                               MenuStart(true, "3", user);
-                            }    
+                            //Console.WriteLine("сыграем еще?д/н");
+                            //while (Console.ReadLine()=="д")
+                            //{
+                            //   MenuStart(true, "3", user);
+                            //}    
                             
 
                         }
