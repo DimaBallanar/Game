@@ -95,9 +95,9 @@ namespace Core.Menu
                         }
                         else if (numberMenu.Equals("3"))
                         {
-                            GamesCore game = new GamesCore();
+                            GamesCore game = new();
                             game.StartMenu(out string result);
-                            UserStatsController stats = new UserStatsController();
+                            UserStatsController stats = new ();
                             stats.AddUserStat(user, result, game.Name);
                             //Console.WriteLine("сыграем еще?д/н");
                             //while (Console.ReadLine()=="д")

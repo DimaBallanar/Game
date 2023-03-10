@@ -32,10 +32,12 @@ namespace BlackJack
             else
             {
                 Console.WriteLine("Player stays at {0}", playerHand.Total());
+                Console.ReadKey();
             }
 
             Console.WriteLine();
             Console.WriteLine("Играет Диллер");
+            Console.ReadKey();
 
             Dealer dealer = new Dealer();
             Hand dealerHand = dealer.Deal(deck);
@@ -55,19 +57,25 @@ namespace BlackJack
             {
                 Console.WriteLine("игрок {0} победил дилера {1}", playerHand.Total(), dealerHand.Total()); ;
                 Console.WriteLine("Player Wins!");
+                result = "WIN";
                 Console.ReadKey();
+                return;
             }
             else if(playerHand.Total() < dealerHand.Total())
             {
                 Console.WriteLine("дилер {1} победил игрока {0}", playerHand.Total(), dealerHand.Total());
                 Console.WriteLine("Игрок проиграл!");
+                result = "Loss";
                 Console.ReadKey();
+                return;
             }
             else
             {
                 Console.WriteLine("дилер {1} = игрок {0}", playerHand.Total(), dealerHand.Total());
                 Console.WriteLine("Ничья");
+                result = "Ничья";
                 Console.ReadKey();
+                return;
             }
             
         }
