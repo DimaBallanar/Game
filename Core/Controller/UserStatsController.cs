@@ -48,7 +48,7 @@ namespace Core.Controller
         {
             if (user != null && gameResult != null)
             {
-                UserStats stats = new UserStats(user.Id, gameResult,gameName);
+                UserStats stats = new (user.Id,gameResult,gameName);
                 _service.AddUserStats(stats);
                 return true;
             }

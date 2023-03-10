@@ -26,6 +26,7 @@ namespace BlackJack
             {
                 Console.WriteLine("Game Over!");
                 result = "win";
+                Console.ReadKey();
                 return;
             }
             else

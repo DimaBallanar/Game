@@ -13,14 +13,14 @@ namespace Core.Models
         public int Id { get; set; }
         public string GameResult { get; set; }
         public string GameName { get; set; }
-        public DateTime Time = DateTime.Now;
+        public DateTime Time { get;set; }
         
         public UserStats(int id, string gameResult, string gameName)
         {
             Id = id;
             GameResult = gameResult;
             GameName = gameName;
-            //Time = DateTime.Now;
+            Time = DateTime.Now;
         }
 
         public override string ToString()
