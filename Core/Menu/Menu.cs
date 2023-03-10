@@ -15,7 +15,6 @@ namespace Core.Menu
         static PlatformController ControllerUser = new PlatformController();
         public static void MenuStart(bool autorizationIn, string? numberMenu, User? user)
         {
-            //PlatformController ControllerUser = new PlatformController();
             while (true)
             {
                 Console.Clear();
