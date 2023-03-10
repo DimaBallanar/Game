@@ -8,7 +8,7 @@ namespace BlackJack
 {
     public class Game
     {
-        Deck deck;
+        readonly Deck deck;
         public string NameGame { get; set; }
         public Game()
         {
@@ -46,6 +46,7 @@ namespace BlackJack
                 Console.Write("Диллер проиграл!");
                 Console.WriteLine("Игрок победил!");
                 result = "loss";
+                Console.ReadKey();
                 return;
             }
 
