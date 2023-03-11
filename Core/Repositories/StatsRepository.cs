@@ -23,6 +23,9 @@ namespace Core.Repositories
         {
             List<UserStats> users = GetAll().ToList();
             List<UserStats> stats = new List<UserStats>();
+            //через linq переписать where
+
+
             for (int i = 0; i < users.Count; i++)
             {
                 if (users[i].Id == id)

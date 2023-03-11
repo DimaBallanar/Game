@@ -12,7 +12,7 @@ namespace BlackJack
 
         public override Hand Deal(Deck deck)
         {
-            while (hand.Total() < 17)
+            while (hand.Total() < 17  )
             {
                 DealCards(1, deck);
             }
