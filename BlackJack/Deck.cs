@@ -10,12 +10,7 @@ namespace BlackJack
     {
         private readonly List<Card> cards = new();
         public Deck() => GenerateCards();
-        //Random random;
-        //public Deck()
-        //{
-        //    random = new Random();
-        //}
-
+       
         public Card GetCard()
         {
             if (IsEmpty) return null;
