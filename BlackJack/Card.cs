@@ -23,5 +23,10 @@ namespace BlackJack
             //Type = type;
             CardEnum = card;
         }
+
+        public override string ToString()
+        {
+            return $"{Name}:{Value}";
+        }
     }
 }
