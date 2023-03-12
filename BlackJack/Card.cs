@@ -8,16 +8,20 @@ namespace BlackJack
 {
     public class Card
     {
-        public int Value { get; }
-
-        public Card(int value)
+        public string Name { get; set; }
+        public int Value { get; set; }
+        //public CardTypes Type { get; set; }
+        public CardTypes CardEnum { get; set; }
+        public Card()
         {
-            Value = value;
+
         }
-
-        public override string ToString()
+        public Card(string name, int value,/* CardTypes type,*/CardTypes card)
         {
-            return Value.ToString();
+            Name = name;
+            Value = value;
+            //Type = type;
+            CardEnum = card;
         }
     }
 }

@@ -52,8 +52,8 @@ namespace BlackJack
                 Console.WriteLine();
                 if (dealerHand.IsBusted())
                 {
-                    Console.Write("Диллер проиграл!");
-                    Console.WriteLine("Игрок победил!");
+                    Console.Write("Диллер выиграл!");
+                    Console.WriteLine("Игрок проиграл!");
                     result = "loss";
                     Console.ReadKey();
                     return;
