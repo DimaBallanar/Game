@@ -54,7 +54,6 @@ namespace BlackJack
                     CardTypes.King => new($"Король", 10, type),
                     CardTypes.Ace => new($"Туз", 11, type),
                 };
-
                 result.Add(card);
             }
 
