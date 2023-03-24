@@ -39,7 +39,6 @@ namespace BlackJack
                 }
             }
         }
-
         private IEnumerable<Card> CreateCardsByType(CardTypes type, int value = 0)
         {
             List<Card> result = new();
