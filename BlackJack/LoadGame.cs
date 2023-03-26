@@ -8,5 +8,7 @@ namespace BlackJack
 {
     public class LoadGame
     {
+        Deck deck;
+        
     }
 }
