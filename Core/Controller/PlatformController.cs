@@ -15,7 +15,7 @@ namespace Core.Controller
         public (bool, User?) Login()
         {
             Console.Write("Enter Name: ");
-            string? name = Console.ReadLine();
+            string? name = Console.ReadLine().ToLower();
             Console.Write("Enter Password: ");
             string? password = Console.ReadLine();
             if (!string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(password))
